@@ -21,11 +21,11 @@
       color: var(--color-accent);
       text-align: center;
       margin: 0;
-      padding: 2rem 1rem;
+      padding: 1rem 1rem; /* Padding atas dan bawah dikurangi */
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      justify-content: center;
+      justify-content: flex-start; /* Konten dimulai dari atas */
       align-items: center;
     }
 
@@ -34,6 +34,7 @@
       margin-bottom: 1rem;
       color: var(--color-secondary);
       text-shadow: 1px 1px 2px var(--color-shadow);
+      margin-top: 0.5rem; /* Menyesuaikan margin agar lebih dekat ke atas */
     }
 
     figure {
@@ -85,7 +86,7 @@
     /* Media Queries untuk responsivitas */
     @media (min-width: 768px) {
       body {
-        padding: 3rem;
+        padding: 2rem; /* Mengurangi padding untuk laptop juga */
       }
       h1 {
         font-size: 2.5rem;
@@ -104,6 +105,7 @@
     @media (max-width: 480px) {
       h1 {
         font-size: 1.5rem;
+        margin-top: 0.5rem;
       }
       figure {
         padding: 0.5rem;
