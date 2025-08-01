@@ -1,237 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Videy.co - Your Video Gallery</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Videy.co | Viral and Trending Video Gallery</title>
+  
+    <meta name="description" content="Discover and watch the latest collection of viral and trending videos on Videy.co. Our daily updated gallery provides endless entertainment."/>
+  <meta name="keywords" content="viral videos, trending videos, video gallery, short-form video, online entertainment, funny videos, memes, Videy.co"/>
+  <meta name="author" content="Videy.co Team"/>
+  <meta name="robots" content="index, follow" />
+  
+    <meta property="og:title" content="Videy.co | Viral and Trending Video Gallery"/>
+  <meta property="og:description" content="Discover and watch the latest collection of viral and trending videos on Videy.co. Our daily updated gallery provides endless entertainment."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://videy.co/"/>
+  <meta property="og:image" content="https://videy.co/placeholder-image.jpg"/>
+  <meta property="og:locale" content="en_US" />
+  
+    <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@videyco">
+  <meta name="twitter:title" content="Videy.co | Viral and Trending Video Gallery">
+  <meta name="twitter:description" content="Discover and watch the latest collection of viral and trending videos on Videy.co. Our daily updated gallery provides endless entertainment.">
+  <meta name="twitter:image" content="https://videy.co/placeholder-image.jpg">
+  
+  <style>
+    :root {
+      /* Modern and consistent color palette */
+      --bg-color: #f4f7f6;
+      --card-bg-color: #ffffff;
+      --text-color: #333333;
+      --link-color: #007bff;
+      --link-hover-color: #0056b3;
+      --shadow-light: rgba(0, 0, 0, 0.08);
+      --shadow-heavy: rgba(0, 0, 0, 0.15);
+    }
 
-  <style>
-    :root {
-      /* Palet warna yang lebih modern dan konsisten */
-      --bg-color: #f4f7f6;
-      --card-bg-color: #ffffff;
-      --text-color: #333333;
-      --link-color: #007bff;
-      --link-hover-color: #0056b3;
-      --shadow-light: rgba(0, 0, 0, 0.08);
-      --shadow-heavy: rgba(0, 0, 0, 0.15);
-    }
+    body {
+      background-color: var(--bg-color);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--text-color);
+      text-align: center;
+      padding: 1.5rem 1rem;
+      margin: 0;
+      line-height: 1.6;
+    }
 
-    body {
-      background-color: var(--bg-color);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      color: var(--text-color);
-      text-align: center;
-      padding: 1.5rem 1rem;
-      margin: 0;
-      line-height: 1.6;
-    }
+    h1 {
+      font-size: 2.5rem;
+      color: var(--link-color);
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 3px var(--shadow-light);
+    }
 
-    h1 {
-      font-size: 2.5rem;
-      color: var(--link-color);
-      margin-bottom: 2rem;
-      text-shadow: 1px 1px 3px var(--shadow-light);
-    }
+    h2 {
+      font-size: 1.5rem;
+      color: var(--text-color);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
 
-    .gallery-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1.5rem;
-      justify-content: center;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      justify-content: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-    figure {
-      background-color: var(--card-bg-color);
-      padding: 1rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px var(--shadow-light);
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 100%;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
+    figure {
+      background-color: var(--card-bg-color);
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px var(--shadow-light);
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
 
-    figure:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px var(--shadow-heavy);
-    }
+    figure:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px var(--shadow-heavy);
+    }
 
-    img {
-      display: block;
-      margin: 0 auto;
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
+    img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
 
-    figcaption {
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--text-color);
-      flex-grow: 1;
-    }
+    figcaption {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-color);
+      flex-grow: 1;
+      text-decoration: none; /* Menghapus garis bawah pada caption */
+    }
 
-    a {
-      display: block;
-      width: 100%;
-      box-sizing: border-box; /* Pastikan padding dan border termasuk dalam lebar */
-      margin: 0 auto;
-      padding: 0.75rem 1.5rem;
-      background-color: var(--link-color);
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 1rem;
-      font-weight: 600;
-      border-radius: 8px;
-      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-    }
+    .video-link {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      background-color: var(--link-color);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
 
-    a:hover {
-      background-color: var(--link-hover-color);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px var(--shadow-heavy);
-    }
+    .video-link:hover {
+      background-color: var(--link-hover-color);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px var(--shadow-heavy);
+    }
 
-    /* Penyesuaian responsif untuk perangkat yang lebih besar */
-    @media (min-width: 768px) {
-      .gallery-container {
-        grid-template-columns: repeat(4, 1fr);
-      }
-      a {
-        width: auto;
-      }
-    }
-  </style>
+    @media (min-width: 768px) {
+      .gallery-container {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .video-link {
+        width: auto;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Videy.co - Your Video Gallery</h1>
-  <div class="gallery-container">
-    <figure>
-      <img src="1.jpg" alt="behind the shoes" />
-      <figcaption>behind the shoes 😂🍆</figcaption>
-      <a href="https://brexit-web.github.io/URL1SKz11.mp4" target="_blank">Go to Video</a>
-    </figure>
+  <h1>Videy.co - Viral and Trending Video Gallery</h1>
+  
+  <p>Discover and watch a curated collection of viral and trending videos updated daily for your entertainment. Find the latest short-form content that everyone is talking about.</p>
+  
+  ---
+  
+  <h2>Featured Videos</h2>
+  <div class="gallery-container">
+    <figure>
+      <a href="https://brexit-web.github.io/URL1SKz11.mp4" target="_blank" class="video-link" title="Watch 'Behind the shoes' viral video">
+        <img src="1.jpg" alt="A funny scene happening 'behind the shoes'" loading="lazy"/>
+        <figcaption>behind the shoes 😂🍆</figcaption>
+      </a>
+    </figure>
 
-    <figure>
-      <img src="2.jpg" alt="he's in a hurry" />
-      <figcaption>he's in a hurry</figcaption>
-      <a href="https://brexit-web.github.io/NA0xNeGZ1.mp4" target="_blank">Go to Video</a>
-    </figure>
+    <figure>
+      <a href="https://brexit-web.github.io/NA0xNeGZ1.mp4" target="_blank" class="video-link" title="Watch 'He's in a hurry' video">
+        <img src="2.jpg" alt="A person rushing in a funny way" loading="lazy"/>
+        <figcaption>he's in a hurry</figcaption>
+      </a>
+    </figure>
 
-    <figure>
-      <img src="3.jpg" alt="I couldn't stand it" />
-      <figcaption>I couldn't stand it</figcaption>
-      <a href="https://brexit-web.github.io/bg3xtfL31.mp4" target="_blank">Go to Video</a>
-    </figure>
+    <figure>
+      <a href="https://brexit-web.github.io/bg3xtfL31.mp4" target="_blank" class="video-link" title="Watch 'I couldn't stand it' video">
+        <img src="3.jpg" alt="A person reacting in a comical way" loading="lazy"/>
+        <figcaption>I couldn't stand it</figcaption>
+      </a>
+    </figure>
 
-    <figure>
-      <img src="4.jpg" alt="Look at the waves" />
-      <figcaption>Look at the waves🌊</figcaption>
-      <a href="https://brexit-web.github.io/4KEnOYXX1.mp4" target="_blank">Go to Video</a>
-    </figure>
+    <figure>
+      <a href="https://brexit-web.github.io/4KEnOYXX1.mp4" target="_blank" class="video-link" title="Watch 'Look at the waves' video">
+        <img src="4.jpg" alt="Beautiful ocean waves" loading="lazy"/>
+        <figcaption>Look at the waves🌊</figcaption>
+      </a>
+    </figure>
 
-    <figure>
-      <img src="5.jpg" alt="tutor i always wanted" />
-      <figcaption>tutor i always wanted</figcaption>
-      <a href="https://brexit-web.github.io/lAStCbav1.mp4" target="_blank">Go to Video</a>
-    </figure>
+    <figure>
+      <a href="https://brexit-web.github.io/lAStCbav1.mp4" target="_blank" class="video-link" title="Watch 'Tutor I always wanted' video">
+        <img src="5.jpg" alt="A humorous tutor scene" loading="lazy"/>
+        <figcaption>tutor i always wanted</figcaption>
+      </a>
+    </figure>
 
-    <figure>
-      <img src="6.jpg" alt="Tiger stripes, fearless" />
-      <figcaption>Tiger stripes, fearless</figcaption>
-      <a href="https://brexit-web.github.io/kRUTOHRL1.mp4" target="_blank">Go to Video</a>
-    </figure>
+    <figure>
+      <a href="https://brexit-web.github.io/kRUTOHRL1.mp4" target="_blank" class="video-link" title="Watch 'Tiger stripes, fearless' video">
+        <img src="6.jpg" alt="A person with tiger stripes looking fearless" loading="lazy"/>
+        <figcaption>Tiger stripes, fearless</figcaption>
+      </a>
+    </figure>
 
-    <figure>
-      <img src="7.jpg" alt="Love got us sweatin" />
-      <figcaption>Love got us sweatin</figcaption>
-      <a href="https://brexit-web.github.io/UmlFZ5Lv1.mp4" target="_blank">Go to Video</a>
-    </figure>
+    <figure>
+      <a href="https://brexit-web.github.io/UmlFZ5Lv1.mp4" target="_blank" class="video-link" title="Watch 'Love got us sweatin' video">
+        <img src="7.jpg" alt="A romantic scene with people sweating" loading="lazy"/>
+        <figcaption>Love got us sweatin</figcaption>
+      </a>
+    </figure>
 
-    <figure>
-      <img src="8.jpg" alt="Pink toes for the win" />
-      <figcaption>Pink toes for the win</figcaption>
-      <a href="https://brexit-web.github.io/uKvPHWBp1.mp4" target="_blank">Go to Video</a>
-    </figure>
+    <figure>
+      <a href="https://brexit-web.github.io/uKvPHWBp1.mp4" target="_blank" class="video-link" title="Watch 'Pink toes for the win' video">
+        <img src="8.jpg" alt="A person with pink toes" loading="lazy"/>
+        <figcaption>Pink toes for the win</figcaption>
+      </a>
+    </figure>
 
-    <figure>
-      <img src="9.jpg" alt="I'm highly favored" />
-      <figcaption>I'm highly favored</figcaption>
-      <a href="https://brexit-web.github.io/iRBuM8DN1.mp4" target="_blank">Go to Video</a>
-    </figure>
+    <figure>
+      <a href="https://brexit-web.github.io/iRBuM8DN1.mp4" target="_blank" class="video-link" title="Watch 'I'm highly favored' video">
+        <img src="9.jpg" alt="A confident person showing their favored status" loading="lazy"/>
+        <figcaption>I'm highly favored</figcaption>
+      </a>
+    </figure>
 
-    <figure>
-      <img src="0.jpg" alt="makes everything burn" />
-      <figcaption>makes everything burn</figcaption>
-      <a href="https://brexit-web.github.io/cfXoD4Wt1.mp4" target="_blank">Go to Video</a>
-    </figure>
+    <figure>
+      <a href="https://brexit-web.github.io/cfXoD4Wt1.mp4" target="_blank" class="video-link" title="Watch 'Makes everything burn' video">
+        <img src="0.jpg" alt="Something that causes a burning sensation" loading="lazy"/>
+        <figcaption>makes everything burn</figcaption>
+      </a>
+    </figure>
 
-    <figure>
-      <img src="11.jpg" alt="This woman is very brave" />
-      <figcaption>This woman is very brave</figcaption>
-      <a href="https://brexit-web.github.io/Zqke9Nw91.mp4" target="_blank">Go to Video</a>
-    </figure>
+    <figure>
+      <a href="https://brexit-web.github.io/Zqke9Nw91.mp4" target="_blank" class="video-link" title="Watch 'This woman is very brave' video">
+        <img src="11.jpg" alt="A woman doing something brave" loading="lazy"/>
+        <figcaption>This woman is very brave</figcaption>
+      </a>
+    </figure>
 
-    <figure>
-      <img src="12.jpg" alt="actually did it in public" />
-      <figcaption>actually did it in public</figcaption>
-      <a href="https://brexit-web.github.io/wQUqfhds1.mp4" target="_blank">Go to Video</a>
-    </figure>
+    <figure>
+      <a href="https://brexit-web.github.io/wQUqfhds1.mp4" target="_blank" class="video-link" title="Watch 'Actually did it in public' video">
+        <img src="12.jpg" alt="Someone doing a surprising act in public" loading="lazy"/>
+        <figcaption>actually did it in public</figcaption>
+      </a>
+    </figure>
 
-    <figure>
-      <img src="13.jpg" alt="Pretty Kitty" />
-      <figcaption>Pretty Kitty 😺</figcaption>
-      <a href="https://brexit-web.github.io/ECvAFrSS1.mp4" target="_blank">Go to Video</a>
-    </figure>
+    <figure>
+      <a href="https://brexit-web.github.io/ECvAFrSS1.mp4" target="_blank" class="video-link" title="Watch 'Pretty Kitty' video">
+        <img src="13.jpg" alt="A video of a pretty cat" loading="lazy"/>
+        <figcaption>Pretty Kitty 😺</figcaption>
+      </a>
+    </figure>
 
-    <figure>
-      <img src="14.jpg" alt="in the middle of the road" />
-      <figcaption>in the middle of the road</figcaption>
-      <a href="https://brexit-web.github.io/tf6Qm5ZE1.mp4" target="_blank">Go to Video</a>
-    </figure>
+    <figure>
+      <a href="https://brexit-web.github.io/tf6Qm5ZE1.mp4" target="_blank" class="video-link" title="Watch 'In the middle of the road' video">
+        <img src="14.jpg" alt="Something unexpected happening in the road" loading="lazy"/>
+        <figcaption>in the middle of the road</figcaption>
+      </a>
+    </figure>
 
-    <figure>
-      <img src="15.jpg" alt="with brother-in-law" />
-      <figcaption>with brother-in-law</figcaption>
-      <a href="https://brexit-web.github.io/KLJYr2fp1.mp4" target="_blank">Go to Video</a>
-    </figure>
+    <figure>
+      <a href="https://brexit-web.github.io/KLJYr2fp1.mp4" target="_blank" class="video-link" title="Watch 'With brother-in-law' video">
+        <img src="15.jpg" alt="A scene with a brother-in-law" loading="lazy"/>
+        <figcaption>with brother-in-law</figcaption>
+      </a>
+    </figure>
 
-    <figure>
-      <img src="16.jpg" alt="beautiful view hit harder" />
-      <figcaption>beautiful view hit harder</figcaption>
-      <a href="https://brexit-web.github.io/Jn93oIB21.mp4" target="_blank">Go to Video</a>
-    </figure>
+    <figure>
+      <a href="https://brexit-web.github.io/Jn93oIB21.mp4" target="_blank" class="video-link" title="Watch 'Beautiful view hit harder' video">
+        <img src="16.jpg" alt="A beautiful view captured on video" loading="lazy"/>
+        <figcaption>beautiful view hit harder</figcaption>
+      </a>
+    </figure>
 
-    <figure>
-      <img src="17.jpg" alt="Her OF video" />
-      <figcaption>Her OF video</figcaption>
-      <a href="https://brexit-web.github.io/qeOC3VYU1.mp4" target="_blank">Go to Video</a>
-    </figure>
+    <figure>
+      <a href="https://brexit-web.github.io/qeOC3VYU1.mp4" target="_blank" class="video-link" title="Watch 'Her OF video'">
+        <img src="17.jpg" alt="A video from her OnlyFans" loading="lazy"/>
+        <figcaption>Her OF video</figcaption>
+      </a>
+    </figure>
 
-    <figure>
-      <img src="18.jpg" alt="Can we have this" />
-      <figcaption>Can we have this</figcaption>
-      <a href="https://brexit-web.github.io/SZgPtiDm1.mp4" target="_blank">Go to Video</a>
-    </figure>
+    <figure>
+      <a href="https://brexit-web.github.io/SZgPtiDm1.mp4" target="_blank" class="video-link" title="Watch 'Can we have this' video">
+        <img src="18.jpg" alt="A video showing something desirable" loading="lazy"/>
+        <figcaption>Can we have this</figcaption>
+      </a>
+    </figure>
 
-    <figure>
-      <img src="19.jpg" alt="That's wife type" />
-      <figcaption>That's wife type ☺</figcaption>
-      <a href="https://brexit-web.github.io/exRhgI5o1.mp4" target="_blank">Go to Video</a>
-    </figure>
+    <figure>
+      <a href="https://brexit-web.github.io/exRhgI5o1.mp4" target="_blank" class="video-link" title="Watch 'That's wife type' video">
+        <img src="19.jpg" alt="A video about a wife type" loading="lazy"/>
+        <figcaption>That's wife type ☺</figcaption>
+      </a>
+    </figure>
 
-    <figure>
-      <img src="20.jpg" alt="see you in top riding" />
-      <figcaption>see you in top riding</figcaption>
-      <a href="https://brexit-web.github.io/Yf43JBWu1.mp4" target="_blank">Go to Video</a>
-    </figure>
-  </div>
+    <figure>
+      <a href="https://brexit-web.github.io/Yf43JBWu1.mp4" target="_blank" class="video-link" title="Watch 'See you in top riding' video">
+        <img src="20.jpg" alt="A video showing someone riding on top" loading="lazy"/>
+        <figcaption>see you in top riding</figcaption>
+      </a>
+    </figure>
+  </div>
 </body>
 </html>
