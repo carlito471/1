@@ -1,130 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Videy.co - Late Night Vibes</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Videy.co | Viral and Trending Videos Gallery</title>
+  <meta name="description" content="Find and watch a collection of viral and trending videos on Videy.co. A video gallery updated daily for your entertainment."/>
+  <meta name="keywords" content="viral video, trending video, video gallery, entertainment, short video, Videy.co"/>
+  <meta name="author" content="Videy.co Team"/>
 
-  <style>
-    :root {
-      /* Warna yang lebih harmonis */
-      --color-primary: #f0f8ff; /* Alice Blue, background lebih lembut */
-      --color-secondary: #007bff; /* Biru cerah, untuk tombol */
-      --color-accent: #2c3e50; /* Abu-abu gelap, untuk teks */
-      --color-hover: #0056b3; /* Biru gelap, saat hover */
-      --color-shadow: rgba(0, 0, 0, 0.1);
-    }
+  <meta property="og:title" content="Videy.co | Viral and Trending Videos Gallery"/>
+  <meta property="og:description" content="Find and watch a collection of viral and trending videos on Videy.co. A video gallery updated daily for your entertainment."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://videy.co/"/>
+  <meta property="og:image" content="https://videy.co/placeholder-image.jpg"/>
+  
+  <style>
+    :root {
+      /* Modern and consistent color palette */
+      --bg-color: #f4f7f6;
+      --card-bg-color: #ffffff;
+      --text-color: #333333;
+      --link-color: #007bff;
+      --link-hover-color: #0056b3;
+      --shadow-light: rgba(0, 0, 0, 0.08);
+      --shadow-heavy: rgba(0, 0, 0, 0.15);
+    }
 
-    body {
-      background-color: var(--color-primary);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: var(--color-accent);
-      text-align: center;
-      margin: 0;
-      padding: 1rem 1rem; /* Padding atas dan bawah dikurangi */
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      justify-content: flex-start; /* Konten dimulai dari atas */
-      align-items: center;
-    }
+    body {
+      background-color: var(--bg-color);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--text-color);
+      text-align: center;
+      padding: 1.5rem 1rem;
+      margin: 0;
+      line-height: 1.6;
+    }
 
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: var(--color-secondary);
-      text-shadow: 1px 1px 2px var(--color-shadow);
-      margin-top: 0.5rem; /* Menyesuaikan margin agar lebih dekat ke atas */
-    }
+    h1 {
+      font-size: 2.5rem;
+      color: var(--link-color);
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 3px var(--shadow-light);
+    }
 
-    figure {
-      margin: 0 0 2rem 0;
-      max-width: 800px;
-      width: 100%;
-      background-color: #ffffff;
-      padding: 1rem;
-      border-radius: 12px;
-      box-shadow: 0 8px 16px var(--color-shadow);
-    }
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      justify-content: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-    img {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin: auto;
-      border-radius: 8px;
-    }
+    figure {
+      background-color: var(--card-bg-color);
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px var(--shadow-light);
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
 
-    .button-container {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin-top: 1.5rem;
-      width: 100%;
-      max-width: 400px;
-    }
+    figure:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px var(--shadow-heavy);
+    }
 
-    a {
-      display: block;
-      padding: 0.75rem 1.5rem;
-      background-color: var(--color-secondary);
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 1rem;
-      font-weight: 600;
-      border-radius: 8px;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-      box-shadow: 0 4px 6px var(--color-shadow);
-    }
+    img {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
 
-    a:hover {
-      background-color: var(--color-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px var(--color-shadow);
-    }
+    figcaption {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-color);
+      flex-grow: 1;
+    }
 
-    /* Media Queries untuk responsivitas */
-    @media (min-width: 768px) {
-      body {
-        padding: 2rem; /* Mengurangi padding untuk laptop juga */
-      }
-      h1 {
-        font-size: 2.5rem;
-      }
-      .button-container {
-        flex-direction: row;
-        gap: 1.5rem;
-        max-width: 500px;
-      }
-      a {
-        flex: 1;
-        font-size: 1.1rem;
-      }
-    }
+    a {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      background-color: var(--link-color);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
 
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 1.5rem;
-        margin-top: 0.5rem;
-      }
-      figure {
-        padding: 0.5rem;
-      }
-      a {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
-      }
-    }
-  </style>
+    a:hover {
+      background-color: var(--link-hover-color);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px var(--shadow-heavy);
+    }
+
+    @media (min-width: 768px) {
+      .gallery-container {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      a {
+        width: auto;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Late night vibes</h1>
-  <figure>
-    <img src="3KRb6ZJE1.mp4.jpg" alt="Late night vibes."/>
-  </figure>
-  <div class="button-container">
-    <a href="https://brexit-web.github.io/3KRb6ZJE1.mp4" target="_blank">Go to Video</a>
-    <a href="https://xcdnvidey.github.io" target="_blank">More Video</a>
-  </div>
+  <h1>Viral and Trending Video Gallery</h1>
+  <div class="gallery-container">
+    <figure>
+      <img src="1.jpg" alt="behind the shoes" />
+      <figcaption>behind the shoes 😂🍆</figcaption>
+      <a href="https://brexit-web.github.io/URL1SKz11.mp4">Go to Video</a>
+    </figure>
+
+    <figure>
+      <img src="2.jpg" alt="he's in a hurry" />
+      <figcaption>he's in a hurry</figcaption>
+      <a href="https://brexit-web.github.io/NA0xNeGZ1.mp4">Go to Video</a>
+    </figure>
+
+    <figure>
+      <img src="3.jpg" alt="I couldn't stand it" />
+      <figcaption>I couldn't stand it</figcaption>
+      <a href="https://brexit-web.github.io/bg3xtfL31.mp4">Go to Video</a>
+    </figure>
+
+    <figure>
+      <img src="4.jpg" alt="Look at the waves" />
+      <figcaption>Look at the waves🌊</figcaption>
+      <a href="https://brexit-web.github.io/4KEnOYXX1.mp4">Go to Video</a>
+    </figure>
+
+    <figure>
+      <img src="5.jpg" alt="tutor i always wanted" />
+      <figcaption>tutor i always wanted</figcaption>
+      <a href="https://brexit-web.github.io/lAStCbav1.mp4">Go to Video</a>
+    </figure>
+
+    <figure>
+      <img src="6.jpg" alt="Tiger stripes, fearless" />
+      <figcaption>Tiger stripes, fearless</figcaption>
+      <a href="https://brexit-web.github.io/kRUTOHRL1.mp4">Go to Video</a>
+    </figure>
+
+    <figure>
+      <img src="7.jpg" alt="Love got us sweatin" />
+      <figcaption>Love got us sweatin</figcaption>
+      <a href="https://brexit-web.github.io/UmlFZ5Lv1.mp4">Go to Video</a>
+    </figure>
+
+    <figure>
+      <img src="8.jpg" alt="Pink toes for the win" />
+      <figcaption>Pink toes for the win</figcaption>
+      <a href="https://brexit-web.github.io/uKvPHWBp1.mp4">Go to Video</a>
+    </figure>
+
+    <figure>
+      <img src="9.jpg" alt="I'm highly favored" />
+      <figcaption>I'm highly favored</figcaption>
+      <a href="https://brexit-web.github.io/iRBuM8DN1.mp4">Go to Video</a>
+    </figure>
+
+    <figure>
+      <img src="0.jpg" alt="makes everything burn" />
+      <figcaption>makes everything burn</figcaption>
+      <a href="https://brexit-web.github.io/cfXoD4Wt1.mp4">Go to Video</a>
+    </figure>
+
+    <figure>
+      <img src="11.jpg" alt="This woman is very brave" />
+      <figcaption>This woman is very brave</figcaption>
+      <a href="https://brexit-web.github.io/Zqke9Nw91.mp4">Go to Video</a>
+    </figure>
+
+    <figure>
+      <img src="12.jpg" alt="actually did it in public" />
+      <figcaption>actually did it in public</figcaption>
+      <a href="https://brexit-web.github.io/wQUqfhds1.mp4">Go to Video</a>
+    </figure>
+
+    <figure>
+      <img src="13.jpg" alt="Pretty Kitty" />
+      <figcaption>Pretty Kitty 😺</figcaption>
+      <a href="https://brexit-web.github.io/ECvAFrSS1.mp4">Go to Video</a>
+    </figure>
+
+    <figure>
+      <img src="14.jpg" alt="in the middle of the road" />
+      <figcaption>in the middle of the road</figcaption>
+      <a href="https://brexit-web.github.io/tf6Qm5ZE1.mp4">Go to Video</a>
+    </figure>
+
+    <figure>
+      <img src="15.jpg" alt="with brother-in-law" />
+      <figcaption>with brother-in-law</figcaption>
+      <a href="https://brexit-web.github.io/KLJYr2fp1.mp4">Go to Video</a>
+    </figure>
+
+    <figure>
+      <img src="16.jpg" alt="beautiful view hit harder" />
+      <figcaption>beautiful view hit harder</figcaption>
+      <a href="https://brexit-web.github.io/Jn93oIB21.mp4">Go to Video</a>
+    </figure>
+
+    <figure>
+      <img src="17.jpg" alt="Her OF video" />
+      <figcaption>Her OF video</figcaption>
+      <a href="https://brexit-web.github.io/qeOC3VYU1.mp4">Go to Video</a>
+    </figure>
+
+    <figure>
+      <img src="18.jpg" alt="Can we have this" />
+      <figcaption>Can we have this</figcaption>
+      <a href="https://brexit-web.github.io/SZgPtiDm1.mp4">Go to Video</a>
+    </figure>
+
+    <figure>
+      <img src="19.jpg" alt="That's wife type" />
+      <figcaption>That's wife type ☺</figcaption>
+      <a href="https://brexit-web.github.io/exRhgI5o1.mp4">Go to Video</a>
+    </figure>
+
+    <figure>
+      <img src="20.jpg" alt="see you in top riding" />
+      <figcaption>see you in top riding</figcaption>
+      <a href="https://brexit-web.github.io/Yf43JBWu1.mp4">Go to Video</a>
+    </figure>
+  </div>
 </body>
 </html>
