@@ -33,15 +33,12 @@
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: clamp(0.9rem, 4.5vw, 2.5rem); /* Mengatur ukuran font responsif */
       color: var(--link-color);
       margin-bottom: 2rem;
       text-shadow: 1px 1px 3px var(--shadow-light);
-      /* START OF CHANGES */
-      white-space: nowrap; /* Mencegah teks melipat ke baris baru */
-      overflow: hidden;    /* Menyembunyikan teks yang melampaui batas */
-      text-overflow: ellipsis; /* Menambahkan elipsis (...) jika teks terpotong */
-      /* END OF CHANGES */
+      white-space: nowrap; /* Memastikan teks tetap dalam satu baris */
+      /* Hapus overflow: hidden; dan text-overflow: ellipsis; dari sini */
     }
 
     .gallery-container {
