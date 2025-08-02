@@ -27,7 +27,8 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       color: var(--text-color);
       text-align: center;
-      padding: 1.5rem 1rem;
+      /* UBAH BARIS INI */
+      padding: 0.5rem 1rem; /* Mengurangi padding atas */
       margin: 0;
       line-height: 1.6;
     }
@@ -83,7 +84,7 @@
       flex-grow: 1;
     }
 
-    .video-link { /* Changed from 'a' to a class for specific styling */
+    .video-link {
       display: block;
       width: 100%;
       box-sizing: border-box;
@@ -98,7 +99,7 @@
       transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .video-link:hover { /* Apply hover to the class */
+    .video-link:hover {
       background-color: var(--link-hover-color);
       transform: translateY(-2px);
       box-shadow: 0 4px 8px var(--shadow-heavy);
@@ -109,7 +110,7 @@
       .gallery-container {
         grid-template-columns: repeat(4, 1fr);
       }
-      .video-link { /* Apply to the class */
+      .video-link {
         width: auto;
       }
     }
