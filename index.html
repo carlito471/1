@@ -27,8 +27,7 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       color: var(--text-color);
       text-align: center;
-      /* UBAH BARIS INI */
-      padding: 0.5rem 1rem; /* Mengurangi padding atas */
+      padding: 0.5rem 1rem;
       margin: 0;
       line-height: 1.6;
     }
@@ -38,6 +37,11 @@
       color: var(--link-color);
       margin-bottom: 2rem;
       text-shadow: 1px 1px 3px var(--shadow-light);
+      /* START OF CHANGES */
+      white-space: nowrap; /* Mencegah teks melipat ke baris baru */
+      overflow: hidden;    /* Menyembunyikan teks yang melampaui batas */
+      text-overflow: ellipsis; /* Menambahkan elipsis (...) jika teks terpotong */
+      /* END OF CHANGES */
     }
 
     .gallery-container {
